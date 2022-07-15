@@ -7,21 +7,21 @@ def mysplit(strng):
         return [ ]
     lista=[]
     palabra = ''
-    dentro = not strng[0].isspace()
+    espacio = not strng[0].isspace()
     for x in strng:
-        if dentro:
+        if espacio:
             if not x.isspace():
                 palabra = palabra + x
             else:
                 lista.append(palabra)
-                dentro = False
+                espacio = False
         else:
             if not x.isspace():
-                dentro = True
+                espacio = True
                 palabra = x
             else:
                 continue
-    if dentro:
+    if espacio:
         lista.append(palabra)
         return lista
 
